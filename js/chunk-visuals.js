@@ -159,10 +159,12 @@ export function addChunkVisualsToScene(
             );
             
             dummy.updateMatrix();
-            instancedGrass.setMatrix(grassIdx++, dummy.matrix);
+            instancedGrass.setMatrixAt(grassIdx++, dummy.matrix);
         }
 
         instancedGrass.count = grassIdx;
+        instancedGrass.instanceMatrix.needsUpdate = true;
+
         if (grassIdx > 0) {
             group.add(instancedGrass);
         }
