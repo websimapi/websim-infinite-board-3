@@ -385,6 +385,8 @@ export class Game {
     animate() {
         requestAnimationFrame(this.animate);
 
+        if (!this.graphics.playerMesh) return;
+
         const delta = this.clock.getDelta();
         
         let logicalPos = new THREE.Vector3();
